@@ -1,0 +1,32 @@
+@Lib('isfpLib') _
+def config =[:]
+
+pipeline {
+    agent any
+
+    stages {
+        stage('prepare build and deployment stage') {
+            steps {
+                config=projectConfig(project)
+            }
+        }
+        stage('Build Project'){
+            steps{
+                node(config.node.name){
+                    svn=projectSVN(config)
+                    if(svn.status){
+                        buildProject(config)
+                    }
+                    createPatch(svn.search(patchVersion))
+                }
+            }
+        }
+        stage('Deploy Patch on Project '){
+            steps{
+            deployPlugin{
+
+            }
+            }
+        }
+    }
+}

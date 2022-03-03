@@ -1,0 +1,22 @@
+{
+    "erp":
+        {
+            "buildNode":"JenkinsHost",
+            "buildDirectory":"",
+            "appDirectory":"",
+            "replacementFiles":[
+                {
+                    "src":"",
+                    "destenation":""
+                },
+                {
+                    "src":"",
+                    "destenation":""
+                }
+            ]
+        },
+        "erp2":{
+            
+        }
+    
+}
