@@ -1,6 +1,7 @@
 package com.isfp
 import groovy.json.JsonSlurper
-class ProjectModel {
+
+class ProjectModel implements Serializable {
     String projectName;
     String buildNode;
     String buildDirectory;
