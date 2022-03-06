@@ -7,25 +7,28 @@ pipeline {
     stages {
         stage('prepare build and deployment stage') {
             steps {
-                config=projectConfig(project)
+                script{
+                    config=projectConfig(project)
+                    echo config.node.name
+                }
             }
         }
         stage('Build Project'){
             steps{
                 node(config.node.name){
+                    script{
                     svn=projectSVN(config)
                     if(svn.status){
                         buildProject(config)
-                    }
+                        }
                     createPatch(svn.search(patchVersion))
+                    }
                 }
             }
         }
         stage('Deploy Patch on Project '){
             steps{
-            deployPlugin{
-
-            }
+                echo 'deploy'
             }
         }
     }
