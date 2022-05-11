@@ -9,5 +9,5 @@ class ProjectModel implements Serializable {
     String patchPath;
     String sourceLocation;
     String[] blockList;
-    //def replacement ;
+    def replacement ;
  }
