@@ -2,16 +2,16 @@
     "erp":
         {
             "buildNode":"JenkinsHost",
-            "buildDirectory":"",
+            "sourceLocation":"",
             "appDirectory":"",
             "replacementFiles":[
                 {
-                    "src":"",
-                    "destenation":""
+                    "src":"/src/main/java/com/",
+                    "destination":"/target/classes/com/"
                 },
                 {
-                    "src":"",
-                    "destenation":""
+                    "src":"/src/main/java/org/",
+                    "destination":"/target/classes/org/"
                 }
             ]
         },

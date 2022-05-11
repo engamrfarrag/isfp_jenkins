@@ -17,6 +17,7 @@ pipeline {
             steps{
                 node(config.node.name){
                     script{
+                    config.replacement.each{echo it.src}
                     svn=projectSVN(config)
                     if(svn.status){
                         buildProject(config)
