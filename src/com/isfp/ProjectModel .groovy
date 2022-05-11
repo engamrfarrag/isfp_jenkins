@@ -8,6 +8,6 @@ class ProjectModel implements Serializable {
     String backupPath;
     String patchPath;
     String sourceLocation;
-    String[] blockList;
-    def replacement ;
+    //String[] blockList;
+    //def replacement ;
  }
